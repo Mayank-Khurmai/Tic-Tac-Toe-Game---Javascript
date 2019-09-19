@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Game</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<meta lang="en-US">
+<meta charset = "utf-8">
+<style>
+
+*{
+    box-sizing: border-box;
+    }
+a{
+    text-decoration: none;
+    color: black;
+    }
+#outer-div{
+    width: 100%;
+    height: 725px;
+    margin: 0 auto;
+    padding: 22px;
+    border-color: pink;
+    border-width: 2px;
+    border-style: groove;
+    }
+#left-div{
+    width: 920px;
+    height: 680px;
+    float: left;
+    margin-right: 25px;
+    border-color: black;
+    border-width: 4px;
+    border-style: ridge;
+    }    
+#right-div{
+    width: 510px;
+    height: 680px;
+    float: left;
+    border-color: black;
+    border-width: 4px;
+    border-style: ridge;
+    }    
+#main-div{
+    width: 302px;
+    height: auto;
+    margin: 110px auto;
+    border-color: pink;
+    border-width: 1px;
+    border-style: groove;
+    }
+#after-click-more-side1{
+        height: 670px;
+        width: 95%;
+        margin: 0 auto; 
+}  
+#after-click-more-side1-upper{
+        height: 250px;
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 15px;
+        margin-bottom: 8px; 
+}
+#fa-address-book{
+        margin: 0 auto;
+        margin-top: 25px;
+        margin-left: 18%;
+        font-size: 200px;
+        color: black;
+        float: left;
+    }  
+#fa-table{
+        margin: 20px;
+        margin-left: 7px;
+        font-size: 20px;
+        color: black;
+        float: left;
+    }    
+#after-click-more-side1-lower{
+        height: 220px;
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        border-bottom-color: red;
+        border-bottom-width: 2px;
+        border-bottom-style: double;
+        border-radius: 10px; 
+}
+#email{
+        border-bottom-color: grey;
+        border-bottom-width: 1px;
+        border-bottom-style: dashed;
+        border-bottom-width: 50%;
+        font-size: 18px;
+        color: black;
+        text-decoration: none;
+        font-family: sans-serif;
+        margin: 0 auto;
+    }
+#mobile{     
+        border-bottom-color: grey;
+        border-bottom-width: 1px;
+        border-bottom-style: dashed;
+        border-bottom-width: 50%;
+        font-size: 18px;
+        color: black;
+        text-decoration: none;
+        font-family: sans-serif;
+        margin: 0 auto;
+    }
+.container{
+    width:300px;
+    overflow: hidden;
+    margin: 50px auto 0;
+    }  
+#turn-div{
+    height: 50px;
+    width: 300px;
+    margin-bottom: -30px;
+    }
+#button-div{
+    height: auto;
+    width: 250px;
+    margin: 0 auto; 
+    }
+#player-name-div{
+    height: auto;
+    width: 250px;
+    margin: 0 auto;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    border-top-color: red;
+    border-top-width: 2px;
+    border-top-style: double;
+    border-radius: 10px;
+    }
+#player-name{
+    font-family: inherit;
+    font-weight: bolder;
+    font-size: 28px;
+    }
+#replay-btn{
+    width: 120px;
+    height: 45px;
+    font-size: 19px;
+    font-family: cursive;
+    border-color: aquamarine;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    }
+#logout-btn{
+    width: 120px;
+    height: 45px;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    font-family: cursive;
+    border-color: aquamarine;
+    border-radius: 20px;
+    }
+#replay-btn:hover{
+    width: 120px;
+    height: 45px;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: cursive;
+    border-color: aquamarine;
+    background-color: aquamarine;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    }
+#logout-btn:hover{
+    width: 120px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: cursive;
+    outline: none;
+    background-color: aquamarine;
+    border-color: aquamarine;
+    border-radius: 20px;
+    }
+#turn{
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 25px;
+    text-align: center; 
+    }
+.container .box{
+    float: left;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    font-family: sans-serif;
+    font-size: 25px;
+    text-align: center;
+    line-height: 100px;
+    cursor: grabbing;
+    }
+.container .box:hover{
+    background-color: dimgray;  
+    }    
+    
+</style>
+</head>
+<body>
+    
+<div id="outer-div">
+<div id="left-div">
+    
+    
+<div id="main-div">   
+<div id ="turn-div">
+<center><h3 id="turn">Start Now</h3></center>
+</div>
+<div class ="container" id="main">
+     <div class="box" id="box1"></div>
+     <div class="box" id="box2"></div>
+     <div class="box" id="box3"></div>
+     <div class="box" id="box4"></div>
+     <div class="box" id="box5"></div>
+     <div class="box" id="box6"></div>
+     <div class="box" id="box7"></div>
+     <div class="box" id="box8"></div>
+     <div class="box" id="box9"></div>    
+</div>   
+</div>
+    
+</div>
+<div id="right-div">
+    
+    
+<div id="after-click-more-side1">
+    <div id="after-click-more-side1-upper">
+    <i class="fa fa-user" id="fa-address-book"></i>
+    </div>
+    <div id="player-name-div"><center><span id="player-name"><?php echo $details['uname']; ?></span></center></div>
+    <div id="after-click-more-side1-lower">
+     <table id="table2">
+      <tr>
+      <td><i class="fa fa-envelope" id="fa-table"></i></td>
+      <td id="email" ><?php echo $details['emailadd']; ?></td>
+      </tr>
+      <tr>
+      <td><i class="fa fa-phone" id="fa-table"></i></td>
+      <td id="mobile"><?php echo $details['mobileno']; ?></td>
+      </tr>
+      <tr>
+      <td><i class="fa fa-flag" id="fa-table"></i></td>
+      <td id="td1"><?php echo "Game : Tic-Tac-Toe"; ?></td>
+      </tr>
+      </table>
+    </div>
+    <div id="button-div">
+    <button id="replay-btn" onclick="replay()">Replay</button>
+    <a href="backtohome.php"><button id="logout-btn">Exit</button></a>
+    </div>
+   
+</div>  
+</div>    
+</div>        
+    
+    
+<script>
+
+var turn = document.getElementById("turn");    
+    
+function getwinner()
+    {
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var box3 = document.getElementById("box3");
+        var box4 = document.getElementById("box4");
+        var box5 = document.getElementById("box5");
+        var box6 = document.getElementById("box6");
+        var box7 = document.getElementById("box7");
+        var box8 = document.getElementById("box8");
+        var box9 = document.getElementById("box9");
+    
+if(box1.innerHTML != "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML)
+    {
+     select_winner_boxes(box1, box2, box3);   
+    }
+if(box4.innerHTML != "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML)
+    {
+     select_winner_boxes(box4, box5, box6);   
+    }
+if(box7.innerHTML != "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML)
+    {
+     select_winner_boxes(box7, box8, box9);   
+    }    
+if(box1.innerHTML != "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML)
+    {
+     select_winner_boxes(box1, box4, box7);
+    }
+if(box2.innerHTML != "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML)
+    {
+     select_winner_boxes(box2, box5, box8);
+    }    
+if(box3.innerHTML != "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML)
+    {
+     select_winner_boxes(box3, box6, box9);
+    }
+if(box1.innerHTML != "" && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML)
+    {
+     select_winner_boxes(box1, box5, box9);   
+    }
+if(box3.innerHTML != "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML)
+    {
+     select_winner_boxes(box3, box5, box7);   
+    }
+}
+
+    
+var boxes = document.querySelectorAll("#main div");
+var xo = 0;
+ 
+for(var i=0; i<boxes.length; i++)
+{
+    boxes[i].onclick = function()
+            {
+             if(this.innerHTML !== "X" && this.innerHTML !== "O")
+                {
+                   if(xo % 2 ===0)    
+                       {
+                         this.innerHTML="X";
+                         turn.innerHTML = "O - Turns Now";
+                         getwinner();
+                         xo = xo+1;
+                       }
+                    else    
+                       {
+                         this.innerHTML="O";
+                         turn.innerHTML = "X - Turns Now";
+                         getwinner();
+                         xo = xo+1;
+                       }
+                 }
+        }
+}
+    
+function select_winner_boxes(b1, b2, b3)
+{
+    b1.style.background = "red";
+    b2.style.background = "red";
+    b3.style.background = "red";
+    turn.innerHTML = b1.innerHTML + " Won! Congrats";
+}
+
+function replay()
+    {
+        for(var i=0; i<boxes.length; i++)
+            {
+                boxes[i].innerHTML = "";
+                boxes[i].style.background = "white";
+                turn.innerHTML = "Start Now";
+            }
+    }
+    
+</script>
+</body>
+</html>
+ 
